@@ -65,9 +65,9 @@
 /* Priorities of user tasks in this project. configMAX_PRIORITIES is defined in
  * the FreeRTOSConfig.h and higher priority numbers denote high priority tasks.
  */
-#define TASK_TEMPERATURE_PRIORITY      (10u)
-#define TASK_RGB_LED_PRIORITY          (15u)
-#define TASK_BT_PRIORITY              (20u)
+#define TASK_TEMPERATURE_PRIORITY      (configMAX_PRIORITIES-3u)
+#define TASK_RGB_LED_PRIORITY          (configMAX_PRIORITIES-2u)
+#define TASK_BT_PRIORITY               (configMAX_PRIORITIES-1u)
 
 /* Stack sizes of user tasks in this project */
 #define TASK_TEMPERATURE_STACK_SIZE    (configMINIMAL_STACK_SIZE)

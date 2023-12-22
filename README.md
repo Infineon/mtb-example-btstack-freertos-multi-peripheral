@@ -4,7 +4,7 @@ This code example demonstrates the implementation of multi-peripheral functional
 
 [View this README on GitHub.](https://github.com/Infineon/mtb-example-btstack-freertos-multi-peripheral)
 
-[Provide feedback on this code example.](https://cypress.co1.qualtrics.com/jfe/form/SV_1NTns53sK2yiljn?Q_EED=eyJVbmlxdWUgRG9jIElkIjoiQ0UyMzg0MTUiLCJTcGVjIE51bWJlciI6IjAwMi0zODQxNSIsIkRvYyBUaXRsZSI6IkJUU1RBQ0s6IEJsdWV0b290aCZyZWc7IExFIG11bHRpLXBlcmlwaGVyYWwiLCJyaWQiOiJwc3l1IiwiRG9jIHZlcnNpb24iOiIxLjAuMCIsIkRvYyBMYW5ndWFnZSI6IkVuZ2xpc2giLCJEb2MgRGl2aXNpb24iOiJNQ0QiLCJEb2MgQlUiOiJJQ1ciLCJEb2MgRmFtaWx5IjoiQlRBQkxFIn0=)
+[Provide feedback on this code example.](https://cypress.co1.qualtrics.com/jfe/form/SV_1NTns53sK2yiljn?Q_EED=eyJVbmlxdWUgRG9jIElkIjoiQ0UyMzg0MTUiLCJTcGVjIE51bWJlciI6IjAwMi0zODQxNSIsIkRvYyBUaXRsZSI6IkJUU1RBQ0s6IEJsdWV0b290aCZyZWc7IExFIG11bHRpLXBlcmlwaGVyYWwiLCJyaWQiOiJwc3l1IiwiRG9jIHZlcnNpb24iOiIyLjAuMCIsIkRvYyBMYW5ndWFnZSI6IkVuZ2xpc2giLCJEb2MgRGl2aXNpb24iOiJNQ0QiLCJEb2MgQlUiOiJJQ1ciLCJEb2MgRmFtaWx5IjoiQlRBQkxFIn0=)
 
 ## Requirements
 
@@ -193,9 +193,9 @@ For a list of supported IDEs and more details, see the "Exporting to IDEs" secti
 
 4. After programming, the application starts automatically. Observe the messages on the UART terminal. The device starts advertising with the name "LE Multi-Peripheral". Use a peer client app like AIROC&trade; Bluetooth&reg; Connect app to scan and connect with the device. Use the KitProg3 COM port to view the Bluetooth&reg; stack and application trace messages in the terminal window:
 
-     **Figure 1. Log messages on KitProg3 COM port**
+   **Figure 1. Log messages on KitProg3 COM port**
 
-     ![AppQR](./images/advertisement.png)
+   ![AppQR](./images/advertisement.png)
 
 
 ## Testing using the AIROC&trade; Bluetooth&reg; Connect mobile app
@@ -239,7 +239,7 @@ For a list of supported IDEs and more details, see the "Exporting to IDEs" secti
 11. Locate the Custom Notification Service characteristic (UUID `3D62A222-42FB-43B0-B0A0-C9D9D55AC8D9`). This service is used to notify the GAP Central device that last modified any of the characteristics. The data payload contains three bytes of information.
 
 - XXXXYY -> XXXX device ID. (0000 -> Default, 8000 to 8003),
-         -> YY characteristics (00 -> Default, 01 -> Custom Service, 02 -> RGB LED)
+         -> YY characteristics (00 -> Default, 01 -> RGB LED, 02 -> Custom Service)
 
 
 ## Debugging
@@ -322,6 +322,7 @@ Document title: *CE238415* – *Bluetooth&reg; LE multi-peripheral*
 | Version | Description of change |
 | ------- | --------------------- |
 | 1.0.0   | New code example      |
+| 2.0.0   | Updated to support ModusToolbox&trade; software v3.1 |
 
 -------------------------------------------------------------------------------
 

@@ -99,7 +99,7 @@
 
 /* Pin for the Thermistor VDD signal */
 #define THERM_OUT1          (P3_4)
-#define ADC_MAX            (56200)
+#define ADC_MAX            (59200)
 
 #endif
 
