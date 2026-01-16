@@ -138,7 +138,7 @@ void task_temperature(void* param)
 
             case TEMPERATURE_PROCESS:
             {
-                #ifndef CYW20829B0LKML
+                #if !defined(CYW20829B0LKML) && !defined(CYW20829B1010)
                 /* Measure voltage drop on the reference resistor */
                 cyhal_gpio_write(THERM_VDD, 0u);
                 cyhal_gpio_write(THERM_GND, 1u);
@@ -196,14 +196,13 @@ static void adc_init(void)
 {
     cy_rslt_t result;
 
-#ifndef CYW20829B0LKML
+#if !defined(CYW20829B0LKML) && !defined(CYW20829B1010)
     result = cyhal_gpio_init(THERM_VDD, CYHAL_GPIO_DIR_OUTPUT, CYHAL_GPIO_DRIVE_STRONG, 0u);
     if (CY_RSLT_SUCCESS == result)
     {
         cyhal_gpio_init(THERM_GND, CYHAL_GPIO_DIR_OUTPUT, CYHAL_GPIO_DRIVE_STRONG, 0u);
     }
 #endif
-
     /* Initialize adc */
     result = cyhal_adc_init(&adc, THERM_OUT1, NULL);
 

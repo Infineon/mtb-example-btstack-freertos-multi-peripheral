@@ -979,6 +979,10 @@ static void send_temperature_indication(float temperature)
 
     for(uint8 i=0;i<4;i++)
     {
+        if(app_bt_dev_connection_id[i] == 0)
+        {
+            continue;
+        }
         status = wiced_bt_gatt_server_send_indication(
                 app_bt_dev_connection_id[i],
                 HDLC_HTS_TEMPERATURE_MEASUREMENT_VALUE,
